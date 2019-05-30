@@ -1,44 +1,49 @@
-
-class car{
-  float xPos,yPos,ySpeed,zPos,vPos,vSpeed;
-  car(){
+float xPos,yPos,ySpeed,zPos,vPos,xSpeed,cPos;
+public class car{
+  public car(){
     xPos=250;
     yPos=400;
     zPos=260;
     vPos=415;
-    
+    cPos=360;
   }
-  
-  void drawBird() {
-    stroke(255);
-    noFill();
-    strokeWeight(2);
-    rect(xPos,yPos,2,-10);
-    rect(xPos,yPos,125,20);
-    rect(zPos,yPos,70,-20);
-     ellipse(zPos,vPos,20,20);
-       ellipse(zPos,vPos,7,7);
-
-   
-  }
-  void jump() {
-    ySpeed=-10;
-    vSpeed=-10;
-  }
-  void drag() {
-    ySpeed+=0.4;
-    vSpeed+=0.4;
-  }
-  void move() {
+    public void move() {
     yPos+=ySpeed; 
-    vPos+=vSpeed;
+    xPos+=xSpeed;
     for (int i = 0; i<3; i++) {
       w[i].xPos-=3;
     }
   }
-  void checkCollisions() {
+  public void drawBird() {
+    stroke(255);
+    fill(255,255,0);
+    triangle(25,25,55,55,55,90);
+     triangle(cPos,yPos,cPos+135,435,495, yPos-20);
+    noFill();
+    strokeWeight(2);
+    fill(255,0,0);
+    rect(xPos,yPos,2,-10);// spoiler
+    rect(xPos,yPos,125,20); //body
+    noFill();
+    rect(xPos+15,yPos,70,-17);//window of car
+   fill(0,0,0);
+     ellipse(xPos+15,yPos+20,20,20);
+     ellipse(xPos+15,yPos+20,10,10);
+     ellipse(xPos+100,yPos+20,20,20);
+     ellipse(xPos+100,yPos+20,10,10);
+     
+  }
+   public void jump() {
+    ySpeed=-10;
+   
+  }
+  public void drag() {
+    ySpeed+=0.4;
+  
+  }
+  public void checkCollisions() {
     if (yPos>800) {
-      if(vPos>800)
+      
       end=false;
     }
     for (int i = 0; i<3; i++) {
@@ -46,4 +51,5 @@ class car{
         end=false;
       }
     }
-  }}
+  }
+}

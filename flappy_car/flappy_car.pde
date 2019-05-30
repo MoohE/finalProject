@@ -7,7 +7,6 @@
     int score=0;
     
     
-    
     void setup(){
       size(500,800);
       for(int i = 0;i<3;i++){
@@ -16,8 +15,9 @@
       }
     }
     void draw(){
-      background(0);
-       background(0);
+      background(15,20,35,60);
+       background(15,20,35,60);
+    
 
 
       if(end){
@@ -32,7 +32,7 @@
       w[i].drawPillar();
       w[i].checkPosition();
       }
-      fill(0);
+      fill(0,128,0);
       stroke(255);
       textSize(32);
       if(end){

@@ -6,8 +6,9 @@
       opening = random(600)+100;
      }
      void drawPillar(){
-       line(xPos,0,xPos,opening-100);  
-       line(xPos,opening+100,xPos,800);
+     fill(0,128,0);
+       rect(xPos,0,xPos,opening-100);  
+       rect(xPos,opening+100,xPos,800);
      }
      void checkPosition(){
       if(xPos<0){
@@ -25,11 +26,15 @@
     void reset(){
      end=true;
      score=0;
-     c.yPos=400;
+     yPos=400;
      for(int i = 0;i<3;i++){
       w[i].xPos+=550;
      w[i].cashed = false;
      }
+    }
+    
+    float getX(){
+      return xPos;
     }
     void mousePressed(){
      c.jump();
