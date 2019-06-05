@@ -14,7 +14,7 @@ public class car{
       w[i].xPos-=3;
     }
   }
-  public void drawBird() {
+  public void drawCar() {
     stroke(255);
     fill(255,255,0);
     triangle(25,25,55,55,55,90);
@@ -35,6 +35,7 @@ public class car{
   }
    public void jump() {
     ySpeed=-10;
+    
    
   }
   public void drag() {

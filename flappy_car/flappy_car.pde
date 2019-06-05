@@ -17,13 +17,15 @@
     void draw(){
       background(15,20,35,60);
        background(15,20,35,60);
+       rect(-10,100,800,100);
+    
     
 
 
       if(end){
       c.move();
       }
-      c.drawBird();
+      c.drawCar();
       if(end){
       c.drag();
       }

@@ -7,11 +7,11 @@
      }
      void drawPillar(){
      fill(0,128,0);
-       rect(xPos,0,xPos,opening-100);  
-       rect(xPos,opening+100,xPos,800);
+       rect(xPos,0,100,opening-100);  
+       rect(xPos,opening+100,100,800);
      }
      void checkPosition(){
-      if(xPos<0){
+      if(xPos<1*8){
        xPos+=(200*3);
        opening = random(600)+100;
        cashed=false;
